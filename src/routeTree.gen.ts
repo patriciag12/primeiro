@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DepoimentosRouteImport } from './routes/depoimentos'
+import { Route as OQueERadiestesiaRouteImport } from './routes/o-que-e-radiestesia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DepoimentosRoute = DepoimentosRouteImport.update({
+  id: '/depoimentos',
+  path: '/depoimentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OQueERadiestesiaRoute = OQueERadiestesiaRouteImport.update({
+  id: '/o-que-e-radiestesia',
+  path: '/o-que-e-radiestesia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/o-que-e-radiestesia': typeof OQueERadiestesiaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/o-que-e-radiestesia': typeof OQueERadiestesiaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/o-que-e-radiestesia': typeof OQueERadiestesiaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/depoimentos' | '/o-que-e-radiestesia'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/depoimentos' | '/o-que-e-radiestesia'
+  id: '__root__' | '/' | '/depoimentos' | '/o-que-e-radiestesia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DepoimentosRoute: typeof DepoimentosRoute
+  OQueERadiestesiaRoute: typeof OQueERadiestesiaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/depoimentos': {
+      id: '/depoimentos'
+      path: '/depoimentos'
+      fullPath: '/depoimentos'
+      preLoaderRoute: typeof DepoimentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-que-e-radiestesia': {
+      id: '/o-que-e-radiestesia'
+      path: '/o-que-e-radiestesia'
+      fullPath: '/o-que-e-radiestesia'
+      preLoaderRoute: typeof OQueERadiestesiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DepoimentosRoute: DepoimentosRoute,
+  OQueERadiestesiaRoute: OQueERadiestesiaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
