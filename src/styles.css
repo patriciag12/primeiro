@@ -255,7 +255,8 @@
 .symptom-item { border-top: 1px solid var(--border); padding-block: 22px; display: flex; align-items: flex-start; gap: 15px; }
 .symptom-item h3 { font-size: 19px; margin-bottom: 5px; }
 .symptom-item p { color: var(--muted-foreground); font-size: 12px; }
-.journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; margin-top: 44px; }
+.journey-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px; margin-top: 44px; }
+.journey-grid > article { min-width: 0; overflow-wrap: anywhere; }
 .journey-number { font-family: var(--font-display); font-size: 35px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 13px; margin-bottom: 20px; }
 .journey-grid h3 { font-size: 20px; margin-bottom: 10px; }
 .journey-grid p { font-size: 13px; color: var(--muted-foreground); }
@@ -291,6 +292,11 @@
   .hero-photo { object-position: 58% center; opacity: 0.7; }
   .journey-grid { gap: 22px; }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero { min-height: 440px; }
+  .hero-content { padding-block: 36px 44px; }
+  .hero h1 { font-size: 48px; }
+}
 @media (max-width: 767px) {
   .site-container { width: calc(100% - 40px); }
   .header-inner { height: 72px; gap: 10px; }
@@ -305,7 +311,7 @@
   .hero-copy { font-size: 14px; max-width: 400px; }
   .hero-meta { gap: 8px; font-size: 10px; flex-direction: column; align-items: flex-start; }
   .hero-index { display: none; }
-  .journey-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 22px; }
+  .journey-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
   .practice-card, .testimonial { padding: 24px; }
   .portrait-frame { max-width: 280px; margin-inline: auto; }
   .graph-1, .graph-4 { width: 130px; height: 130px; }

@@ -1,14 +1,14 @@
 {
   "source": "code-archive",
   "capabilities": [
-    {"capability":"Pages and visual design","source":"Stitch ZIP and HTML preview","outcome":"migrate","status":"in_progress","next_action":"Recreate source as three accessible TanStack content pages"},
-    {"capability":"Radiesthesia educational content","source":"Radiestesia_Terapeutica_004.pdf","outcome":"migrate","status":"in_progress","next_action":"Adapt factual source content with complementary-care disclaimer"},
-    {"capability":"Contact providers","source":"User-supplied email, Instagram and WhatsApp links","outcome":"preserve","status":"in_progress","next_action":"Verify exact link destinations and external-link safety"},
+    {"capability":"Pages and visual design","source":"Stitch ZIP and HTML preview","outcome":"migrate","status":"verified","next_action":"Three pages render via SSR and navigate on mobile and desktop; source-inspired editorial design"},
+    {"capability":"Radiesthesia educational content","source":"Radiestesia_Terapeutica_004.pdf","outcome":"migrate","status":"verified","next_action":"Education, chakras, aura, journey and exact investment preserved with responsible complementary-care context"},
+    {"capability":"Contact providers","source":"User-supplied email, Instagram and WhatsApp links","outcome":"preserve","status":"verified","next_action":"Exact href values verified in DOM and tests; new-tab links protected; provider account ownership not independently verified"},
     {"capability":"Schema, records, auth identities and authorization","source":"Static source HTML","outcome":"not_applicable","status":"inspected","next_action":"No database, accounts or data-backed forms detected; keep static site"},
-    {"capability":"File assets","source":"Embedded HTML media and reference ZIP","outcome":"migrate","status":"in_progress","next_action":"Extract and optimize usable media; do not embed design screenshot"},
+    {"capability":"File assets","source":"Embedded HTML media and reference ZIP","outcome":"migrate","status":"verified","next_action":"Source portrait and signature preserved as CDN assets; optimized new pendulum image; all load successfully"},
     {"capability":"Payments, secrets, webhooks, callbacks, schedules and APIs","source":"Static source HTML","outcome":"not_applicable","status":"inspected","next_action":"No production integration detected"},
-    {"capability":"SEO and cutover","source":"Unpublished Lovable target","outcome":"adapt","status":"pending","next_action":"Set per-page metadata; sitemap, Google indexing and production checks await public domain"},
-    {"capability":"Testimonials","source":"Source design excerpts","outcome":"preserve_with_disclosure","status":"pending","next_action":"Determine authentic versus illustrative testimonials before public use"},
-    {"capability":"Verification and security","source":"Target site","outcome":"verify","status":"pending","next_action":"Run selective tests, browser flows and dependency/security checks"}
+    {"capability":"SEO and cutover","source":"Unpublished Lovable target","outcome":"adapt","status":"pending","next_action":"Per-page metadata and ProfessionalService schema verified in actual SSR; crawler access preserved; public sitemap, indexing and production checks await public domain"},
+    {"capability":"Testimonials","source":"Source design excerpts","outcome":"preserve_with_disclosure","status":"pending","next_action":"User must confirm authenticity and consent; clear preview disclosure, no fabricated ratings or review schema, leaf noindexed"},
+    {"capability":"Verification and security","source":"Target site","outcome":"verify","status":"verified_with_limits","next_action":"12 tests passed, navigation/FAQ/contact DOM verified, no runtime errors; known production dependency scan clean after patches. Response protections verified; deep scan covered pre-edit snapshot, not final implementation. Published performance/security remain unverified."}
   ]
 }

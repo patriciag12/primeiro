@@ -14,7 +14,7 @@ const graphs: { name: string; drawing: ReactNode }[] = [
   { name: "Desimpregnador", drawing: <><Rings radii={[91, 103, 115, 126]} /><polygon points={points(10, 62)} />{Array.from({ length: 72 }, (_, i) => <path key={i} transform={`rotate(${i * 5} 150 150)`} d="M150 25 V8 M147 12 L150 8 L153 12" />)}</> },
   { name: "Decágono", drawing: <polygon points={points(10, 131)} /> },
   { name: "Alta Vitalidade", drawing: <><Rings radii={[126, 109, 92, 74]} /><text x="150" y="159" stroke="none" fill="currentColor" fontFamily="serif" fontSize="29" textAnchor="middle">9797979</text></> },
-  { name: "Labirinto de Amiens", drawing: <>{Array.from({ length: 10 }, (_, i) => <polygon points={points(8, 132 - i * 11, 22.5)} key={i} strokeDasharray={`${470 - i * 30} 14 ${220 - i * 13} 14`} />)}<circle cx="150" cy="150" r="19" /><path d="M150 170V287 M18 150H122 M178 150H282 M150 18V128" /></> },
+  { name: "Mesa de Amiens", drawing: <><rect x="104" y="11" width="92" height="278" /><circle cx="150" cy="57" r="45" /><circle cx="150" cy="150" r="45" /><circle cx="150" cy="243" r="45" /><path d="M113 125H187" /><circle cx="150" cy="138" r="4" fill="currentColor" /></> },
 ];
 
 export function RadiesthesiaWatermarks() {
