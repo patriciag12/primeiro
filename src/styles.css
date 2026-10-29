@@ -1,6 +1,8 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@import "@fontsource-variable/lora";
+@import "@fontsource-variable/dm-sans";
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -19,6 +21,15 @@
  */
 
 @theme inline {
+  --font-sans: "DM Sans Variable", sans-serif;
+  --font-display: "Lora Variable", Georgia, serif;
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-sage: var(--sage);
+  --color-rose: var(--rose);
+  --color-watermark: var(--watermark);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,26 +73,41 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+  --background: oklch(0.992 0.003 20);
+  --foreground: oklch(0.31 0.027 347);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.31 0.027 347);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.31 0.027 347);
+  --primary: oklch(0.43 0.092 351);
+  --primary-foreground: oklch(0.99 0.002 20);
+  --secondary: oklch(0.962 0.013 14);
+  --secondary-foreground: oklch(0.43 0.092 351);
+  --muted: oklch(0.965 0.005 120);
+  --muted-foreground: oklch(0.48 0.018 347);
+  --accent: oklch(0.935 0.024 14);
+  --accent-foreground: oklch(0.43 0.092 351);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.91 0.013 20);
+  --input: oklch(0.91 0.013 20);
+  --ring: oklch(0.58 0.1 351);
+  --whatsapp: oklch(0.44 0.092 158);
+  --whatsapp-foreground: oklch(0.99 0.002 158);
+  --sage: oklch(0.94 0.017 150);
+  --rose: oklch(0.965 0.013 14);
+  --watermark: oklch(0.56 0.063 351);
+  --footer: oklch(0.29 0.04 350);
+  --footer-foreground: oklch(0.96 0.008 20);
+  --shadow-soft: 0 6px 22px oklch(0.31 0.027 347 / 0.04);
+  --chakra-crown: oklch(0.83 0.073 307);
+  --chakra-third: oklch(0.79 0.066 276);
+  --chakra-throat: oklch(0.84 0.063 230);
+  --chakra-heart: oklch(0.83 0.072 147);
+  --chakra-solar: oklch(0.9 0.1 95);
+  --chakra-sacral: oklch(0.84 0.093 58);
+  --chakra-root: oklch(0.79 0.087 24);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -130,6 +156,27 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: oklch(0.22 0.018 347);
+  --foreground: oklch(0.95 0.008 20);
+  --card: oklch(0.26 0.018 347);
+  --card-foreground: oklch(0.95 0.008 20);
+  --primary: oklch(0.79 0.07 351);
+  --primary-foreground: oklch(0.22 0.018 347);
+  --secondary: oklch(0.28 0.027 347);
+  --secondary-foreground: oklch(0.95 0.008 20);
+  --muted: oklch(0.27 0.013 150);
+  --muted-foreground: oklch(0.77 0.015 20);
+  --accent: oklch(0.34 0.04 347);
+  --accent-foreground: oklch(0.95 0.008 20);
+  --rose: oklch(0.27 0.027 347);
+  --sage: oklch(0.27 0.013 150);
+  --watermark: oklch(0.74 0.045 351);
+  --border: oklch(0.38 0.018 347);
+  --input: oklch(0.38 0.018 347);
+  --whatsapp: oklch(0.44 0.092 158);
+  --whatsapp-foreground: oklch(0.99 0.002 158);
+  --footer: oklch(0.19 0.025 350);
+  --footer-foreground: oklch(0.96 0.008 20);
 }
 
 @layer base {
@@ -140,5 +187,138 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
   }
+  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; font-weight: 400; }
+  * { letter-spacing: 0; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 5px; }
+  ::selection { background: var(--accent); color: var(--accent-foreground); }
+}
+
+.site-container { width: min(1160px, calc(100% - 96px)); margin-inline: auto; }
+.section-space { padding-block: 88px; }
+.eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--primary); display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; width: 25px; height: 1px; background: currentColor; }
+.section-title { font-size: 38px; margin-top: 14px; }
+.section-title em { color: var(--primary); }
+.chakra-strip { height: 4px; display: grid; grid-template-columns: repeat(7, 1fr); }
+.chakra-strip span:nth-child(1), .chakra-root { background: var(--chakra-root); }
+.chakra-strip span:nth-child(2), .chakra-sacral { background: var(--chakra-sacral); }
+.chakra-strip span:nth-child(3), .chakra-solar { background: var(--chakra-solar); }
+.chakra-strip span:nth-child(4), .chakra-heart { background: var(--chakra-heart); }
+.chakra-strip span:nth-child(5), .chakra-throat { background: var(--chakra-throat); }
+.chakra-strip span:nth-child(6), .chakra-third { background: var(--chakra-third); }
+.chakra-strip span:nth-child(7), .chakra-crown { background: var(--chakra-crown); }
+.signature { object-fit: contain; }
+.site-header { background: var(--background); position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--border); }
+.header-inner { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand-name { font-family: var(--font-display); font-size: 24px; font-style: italic; color: var(--primary); line-height: 1.3; }
+.brand-subtitle { font-size: 8px; text-transform: uppercase; color: var(--muted-foreground); display: block; margin-top: 3px; }
+.nav-link { font-size: 13px; color: var(--muted-foreground); padding: 8px 2px; position: relative; }
+.nav-link:hover, .nav-link[data-status=active] { color: var(--primary); }
+.nav-link[data-status=active]::after { content: ""; position: absolute; height: 1px; background: var(--primary); bottom: 0; left: 0; right: 0; }
+.hero { position: relative; min-height: 560px; display: flex; align-items: center; isolation: isolate; overflow: hidden; background: var(--rose); }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero-content { padding-block: 68px 82px; }
+.hero h1 { font-size: 64px; line-height: 1.13; margin-block: 18px 20px; max-width: 580px; }
+.hero h1 em { display: block; color: var(--primary); }
+.hero-copy { max-width: 480px; font-size: 16px; color: var(--muted-foreground); }
+.hero-name { display: block; font-family: var(--font-display); font-size: 22px; margin-bottom: 12px; }
+.hero-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 24px; color: var(--muted-foreground); font-size: 11px; }
+.hero-meta span { display: flex; gap: 6px; align-items: center; }
+.hero-index { position: absolute; bottom: 24px; right: 48px; font-size: 10px; color: var(--muted-foreground); }
+.radiesthesia-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.watermark { position: absolute; color: var(--watermark); width: 220px; height: 220px; opacity: 0.085; animation: float-graph 17s ease-in-out infinite; }
+.watermark:nth-child(even) { animation-delay: -7s; animation-duration: 21s; }
+.graph-1 { top: 2%; right: 2%; width: 210px; height: 210px; }
+.graph-2 { top: 15%; left: -4%; width: 290px; height: 290px; }
+.graph-3 { top: 30%; right: -3%; width: 250px; height: 250px; }
+.graph-4 { top: 44%; left: 2%; width: 180px; height: 180px; }
+.graph-5 { top: 60%; right: 2%; width: 300px; height: 300px; }
+.graph-6 { top: 76%; left: -2%; width: 230px; height: 230px; }
+.graph-7 { bottom: 1%; right: -1%; width: 265px; height: 265px; }
+.content-band { position: relative; }
+.content-band > .site-container { position: relative; z-index: 1; }
+.practice-card { background: var(--card); border: 1px solid var(--border); padding: 28px; border-radius: 6px; box-shadow: var(--shadow-soft); }
+.practice-icon { color: var(--primary); background: var(--secondary); width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 21px; }
+.practice-card h3 { font-size: 23px; margin-bottom: 10px; }
+.practice-card p { font-size: 13px; color: var(--muted-foreground); }
+.portrait-frame { position: relative; max-width: 340px; }
+.portrait-frame::before { content: ""; position: absolute; top: -14px; right: -14px; width: 100%; height: 100%; border: 1px solid var(--border); border-radius: 48% 48% 5px 5px; }
+.portrait { position: relative; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 48% 48% 5px 5px; }
+.symptom-item { border-top: 1px solid var(--border); padding-block: 22px; display: flex; align-items: flex-start; gap: 15px; }
+.symptom-item h3 { font-size: 19px; margin-bottom: 5px; }
+.symptom-item p { color: var(--muted-foreground); font-size: 12px; }
+.journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; margin-top: 44px; }
+.journey-number { font-family: var(--font-display); font-size: 35px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 13px; margin-bottom: 20px; }
+.journey-grid h3 { font-size: 20px; margin-bottom: 10px; }
+.journey-grid p { font-size: 13px; color: var(--muted-foreground); }
+.testimonial { border: 1px solid var(--border); padding: 28px; background: var(--card); border-radius: 6px; display: flex; flex-direction: column; box-shadow: var(--shadow-soft); }
+.testimonial blockquote { font-family: var(--font-display); font-size: 15px; line-height: 1.8; flex: 1; margin-block: 15px 24px; }
+.testimonial-person { display: flex; align-items: center; gap: 12px; padding-top: 19px; border-top: 1px solid var(--border); }
+.testimonial-initials { width: 35px; height: 35px; border-radius: 50%; background: var(--secondary); color: var(--primary); font-size: 11px; display: grid; place-items: center; }
+.investment-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.investment-table td { padding: 20px 0; border-bottom: 1px solid var(--border); }
+.investment-table td:last-child { text-align: right; font-family: var(--font-display); color: var(--primary); font-size: 22px; white-space: nowrap; padding-left: 20px; }
+.investment-table small { display: block; font-family: var(--font-sans); font-size: 11px; color: var(--muted-foreground); }
+.site-footer { position: relative; background: var(--footer); color: var(--footer-foreground); padding-block: 52px 24px; }
+.site-footer a { transition: opacity 0.2s; }
+.site-footer a:hover { opacity: 0.75; }
+.footer-title { font-size: 10px; text-transform: uppercase; opacity: 0.65; margin-bottom: 18px; }
+.footer-contact { font-size: 12px; display: flex; align-items: flex-start; gap: 10px; overflow-wrap: anywhere; }
+.footer-contact svg { flex: none; margin-top: 3px; }
+.article-header { padding-block: 64px 42px; background: var(--rose); border-bottom: 1px solid var(--border); }
+.article-header h1 { font-size: 48px; max-width: 780px; margin-top: 20px; }
+.article-lead { font-size: 17px; max-width: 680px; margin-top: 22px; color: var(--muted-foreground); }
+.article-section { padding-block: 54px; border-bottom: 1px solid var(--border); }
+.article-section h2 { font-size: 32px; margin-bottom: 22px; }
+.article-section p { margin-block: 15px; color: var(--muted-foreground); }
+.article-section h3 { font-size: 21px; margin-top: 25px; margin-bottom: 8px; }
+.chakra-row { display: grid; grid-template-columns: 18px 150px 1fr; gap: 20px; padding-block: 18px; border-bottom: 1px solid var(--border); align-items: center; }
+.chakra-dot { height: 14px; width: 14px; border-radius: 50%; }
+.floating-whatsapp { position: fixed; right: 24px; bottom: 24px; z-index: 45; width: 52px; height: 52px; border-radius: 50%; box-shadow: var(--shadow-soft); }
+@keyframes float-graph { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+@media (max-width: 1023px) {
+  .site-container { width: calc(100% - 64px); }
+  .hero h1 { font-size: 54px; max-width: 470px; }
+  .hero-copy { max-width: 410px; }
+  .hero-photo { object-position: 58% center; opacity: 0.7; }
+  .journey-grid { gap: 22px; }
+}
+@media (max-width: 767px) {
+  .site-container { width: calc(100% - 40px); }
+  .header-inner { height: 72px; gap: 10px; }
+  .brand-name { font-size: 21px; }
+  .brand-subtitle { font-size: 7px; }
+  .section-space { padding-block: 58px; }
+  .section-title { font-size: 31px; }
+  .hero { min-height: 690px; align-items: flex-start; }
+  .hero-content { padding-top: 40px; padding-bottom: 275px; }
+  .hero h1 { font-size: 43px; max-width: 370px; }
+  .hero-photo { opacity: 1; object-fit: cover; height: 300px; top: auto; bottom: 0; object-position: 90% center; }
+  .hero-copy { font-size: 14px; max-width: 400px; }
+  .hero-meta { gap: 12px; font-size: 10px; }
+  .hero-index { display: none; }
+  .journey-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 22px; }
+  .practice-card, .testimonial { padding: 24px; }
+  .portrait-frame { max-width: 280px; margin-inline: auto; }
+  .graph-1, .graph-4 { width: 130px; height: 130px; }
+  .graph-2, .graph-5, .graph-7 { width: 195px; height: 195px; }
+  .watermark { opacity: 0.065; }
+  .article-header { padding-block: 38px; }
+  .article-header h1 { font-size: 36px; }
+  .article-lead { font-size: 15px; }
+  .article-section h2 { font-size: 28px; }
+  .chakra-row { grid-template-columns: 14px 105px 1fr; gap: 12px; font-size: 12px; }
+  .floating-whatsapp { width: 48px; height: 48px; right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
