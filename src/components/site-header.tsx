@@ -4,13 +4,14 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { contact } from "@/lib/site-content";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return <header className="site-header">
     <div className="chakra-strip" aria-hidden="true">{Array.from({ length: 7 }, (_, i) => <span key={i} />)}</div>
     <div className="site-container header-inner">
-      <Link to="/" aria-label="Millene Ferreira — início" onClick={() => setOpen(false)} className="shrink-0"><span className="brand-name">Millene Ferreira</span><span className="brand-subtitle">Terapeuta Vibracional Integrativa</span></Link>
+      <Link to="/" aria-label="Millene Ferreira — início" onClick={() => setOpen(false)} className="shrink-0"><BrandLogo eager /></Link>
       <nav aria-label="Navegação principal" className="hidden items-center gap-8 lg:flex">
         <Link to="/" className="nav-link" activeOptions={{ exact: true }}>Home</Link>
         <Link to="/o-que-e-radiestesia" className="nav-link">O que é Radiestesia?</Link>

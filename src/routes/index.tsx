@@ -9,8 +9,8 @@ import { ContactInvitation } from "@/components/contact-invitation";
 import { contact, investment, journey } from "@/lib/site-content";
 import { pageHead } from "@/lib/seo";
 import hero from "@/assets/radiestesia-pendulo.webp.asset.json";
-import portrait from "@/assets/millene-ferreira.webp.asset.json";
-import signature from "@/assets/millene-assinatura.png.asset.json";
+import { MetatronPortrait } from "@/components/metatron-portrait";
+import { BrandLogo } from "@/components/brand-logo";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -65,7 +65,7 @@ function Index() {
 
     <section className="content-band section-space">
       <div className="site-container grid items-center gap-12 md:grid-cols-[0.9fr_1.15fr] lg:gap-24">
-        <div className="portrait-frame"><img className="portrait" src={portrait.url} alt="Millene Ferreira, terapeuta vibracional integrativa" width={640} height={800} loading="lazy" decoding="async" /></div>
+        <MetatronPortrait />
         <div>
           <span className="eyebrow">Quem cuida de você</span>
           <h2 className="section-title">Prazer, eu sou<br /><em>Millene Ferreira.</em></h2>
@@ -73,7 +73,7 @@ function Index() {
           <p className="mt-6 text-sm text-muted-foreground">Meu trabalho com a radiestesia terapêutica oferece um espaço de escuta, acolhimento e autoconhecimento. Um olhar sensível para o seu momento, respeitando a sua história e a sua individualidade.</p>
           <p className="mt-4 text-sm text-muted-foreground">Por meio do pêndulo, de tabelas e de gráficos radiestésicos, o cuidado é direcionado à harmonização dos chakras, da aura e dos corpos sutis, dentro da abordagem vibracional.</p>
           <div className="mt-7 flex items-center gap-3 border-t border-border pt-5 text-xs text-muted-foreground"><Globe className="size-4 text-primary" aria-hidden="true" /> De San Diego para onde você estiver.</div>
-          <img className="signature mt-5 h-auto w-48" src={signature.url} alt="Assinatura Millene Ferreira" width={1435} height={326} loading="lazy" />
+          <BrandLogo className="brand-logo-about mt-5" />
         </div>
       </div>
     </section>

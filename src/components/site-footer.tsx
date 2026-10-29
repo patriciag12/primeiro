@@ -3,13 +3,14 @@ import { Mail, Instagram, Globe, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { contact, disclaimer } from "@/lib/site-content";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function SiteFooter() {
   return <>
     <footer className="site-footer">
       <div className="site-container relative z-10">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.7fr_1.1fr]">
-          <div><p className="font-display text-3xl italic">Millene Ferreira</p><p className="mt-3 text-[10px] uppercase opacity-70">Terapeuta Vibracional Integrativa</p><p className="mt-5 max-w-xs text-xs opacity-75">Um olhar sensível. Um cuidado individual.<br />Um caminho de volta para você.</p></div>
+          <div><Link to="/" aria-label="Millene Ferreira — início"><BrandLogo className="brand-logo-footer" /></Link><p className="mt-5 max-w-xs text-xs opacity-75">Um olhar sensível. Um cuidado individual.<br />Um caminho de volta para você.</p></div>
           <div><p className="footer-title">Explore</p><nav aria-label="Navegação do rodapé" className="flex flex-col items-start gap-3 text-xs"><Link to="/">Home</Link><Link to="/o-que-e-radiestesia">O que é Radiestesia?</Link><Link to="/depoimentos">Depoimentos</Link></nav></div>
           <div><p className="footer-title">Vamos conversar</p><div className="flex flex-col gap-4">
             <a className="footer-contact" href={`mailto:${contact.email}`}><Mail className="size-4" aria-hidden="true" />{contact.email}</a>
