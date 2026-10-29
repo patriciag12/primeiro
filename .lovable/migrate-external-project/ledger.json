@@ -1,0 +1,14 @@
+{
+  "source": "code-archive",
+  "capabilities": [
+    {"capability":"Pages and visual design","source":"Stitch ZIP and HTML preview","outcome":"migrate","status":"in_progress","next_action":"Recreate source as three accessible TanStack content pages"},
+    {"capability":"Radiesthesia educational content","source":"Radiestesia_Terapeutica_004.pdf","outcome":"migrate","status":"in_progress","next_action":"Adapt factual source content with complementary-care disclaimer"},
+    {"capability":"Contact providers","source":"User-supplied email, Instagram and WhatsApp links","outcome":"preserve","status":"in_progress","next_action":"Verify exact link destinations and external-link safety"},
+    {"capability":"Schema, records, auth identities and authorization","source":"Static source HTML","outcome":"not_applicable","status":"inspected","next_action":"No database, accounts or data-backed forms detected; keep static site"},
+    {"capability":"File assets","source":"Embedded HTML media and reference ZIP","outcome":"migrate","status":"in_progress","next_action":"Extract and optimize usable media; do not embed design screenshot"},
+    {"capability":"Payments, secrets, webhooks, callbacks, schedules and APIs","source":"Static source HTML","outcome":"not_applicable","status":"inspected","next_action":"No production integration detected"},
+    {"capability":"SEO and cutover","source":"Unpublished Lovable target","outcome":"adapt","status":"pending","next_action":"Set per-page metadata; sitemap, Google indexing and production checks await public domain"},
+    {"capability":"Testimonials","source":"Source design excerpts","outcome":"preserve_with_disclosure","status":"pending","next_action":"Determine authentic versus illustrative testimonials before public use"},
+    {"capability":"Verification and security","source":"Target site","outcome":"verify","status":"pending","next_action":"Run selective tests, browser flows and dependency/security checks"}
+  ]
+}
