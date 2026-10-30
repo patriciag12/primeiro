@@ -16,6 +16,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { RadiesthesiaWatermarks } from "@/components/radiesthesia-watermarks";
 import { Button } from "@/components/ui/button";
+import { LangProvider } from "@/lib/lang-context";
 
 function NotFoundComponent() {
   return (
@@ -120,13 +121,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-background focus:px-4 focus:py-2">Ir para o conteúdo</a>
-      <SiteHeader />
-      <div className="relative isolate">
-        <RadiesthesiaWatermarks />
-        <main id="conteudo"><Outlet /></main>
-        <SiteFooter />
-      </div>
+      <LangProvider>
+        <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-background focus:px-4 focus:py-2">Ir para o conteúdo</a>
+        <SiteHeader />
+        <div className="relative isolate">
+          <RadiesthesiaWatermarks />
+          <main id="conteudo"><Outlet /></main>
+          <SiteFooter />
+        </div>
+      </LangProvider>
     </QueryClientProvider>
   );
 }

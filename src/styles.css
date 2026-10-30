@@ -267,9 +267,58 @@
 .graph-7 { top: 86%; right: 4%; width: 230px; height: 230px; }
 .graph-8 { bottom: 1%; left: 2%; width: 260px; height: 260px; color: var(--footer-foreground); opacity: 0.06; }
 
-.content-band { position: relative; background-image: var(--gradient-section); box-shadow: var(--shadow-section); }
+/* ── Botão de idioma PT / EN ────────────────────────────────────────── */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  line-height: 1;
+}
+.lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
+.lang-sep { opacity: 0.35; }
+.lang-active { color: var(--primary); font-weight: 700; }
+
+/* ── Divisões esfumaçadas entre as dobras (sections) ────────────────── */
+.content-band {
+  position: relative;
+  background-image: var(--gradient-section);
+  box-shadow: var(--shadow-section);
+  isolation: isolate;
+}
 main > .content-band:nth-child(even) { background-image: var(--gradient-section-alternate); }
 .content-band > .site-container { position: relative; z-index: 3; }
+
+/* Overlay de névoa superior em cada dobra */
+.content-band.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  background: linear-gradient(to bottom, oklch(0.98 0.009 307 / 0.55), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Overlay de névoa inferior — sombra na transição entre dobras */
+.content-band.section-divider::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 72px;
+  background: linear-gradient(to top, oklch(0.93 0.012 307 / 0.40), transparent);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 12px 32px -4px oklch(0.28 0.04 310 / 0.12);
+}
 .practice-card { background: var(--card); border: 1px solid var(--border); padding: 28px; border-radius: 6px; box-shadow: var(--shadow-soft); }
 .practice-icon { color: var(--primary); background: var(--secondary); width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 21px; }
 .practice-card h3 { font-size: 23px; margin-bottom: 10px; }
