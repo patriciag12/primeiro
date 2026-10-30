@@ -446,8 +446,8 @@ main > .content-band:nth-child(even) { background-image: var(--gradient-section-
 /* Linhas e Indicadores dos Chakras */
 .chakra-row { display: grid; grid-template-columns: 24px 160px 1fr; gap: 20px; padding-block: 18px; border-bottom: 1px solid var(--border); align-items: center; }
 .chakra-dot { height: 16px; width: 16px; border-radius: 50%; box-shadow: 0 0 8px currentColor; flex-shrink: 0; }
-.floating-whatsapp { position: fixed; right: 24px; bottom: 29px; z-index: 45; width: 60px; height: 60px; padding: 0; border-radius: 50%; background: var(--gradient-whatsapp); box-shadow: var(--shadow-whatsapp); transition: transform 180ms ease; }
-.floating-whatsapp svg { width: 76%; height: 76%; filter: drop-shadow(var(--shadow-whatsapp-icon)); }
+.floating-whatsapp { position: fixed; right: 24px; bottom: 29px; z-index: 45; width: 50px; height: 50px; padding: 0; border-radius: 50%; background: oklch(0.68 0.17 150); box-shadow: 0 4px 12px oklch(0.2 0.06 151 / 0.3); transition: transform 180ms ease; }
+.floating-whatsapp svg { width: 26px; height: 26px; }
 .floating-whatsapp:hover { transform: translateY(-3px); }
 .floating-whatsapp:active { transform: translateY(3px); }
 
@@ -508,7 +508,7 @@ main > .content-band:nth-child(even) { background-image: var(--gradient-section-
   .article-lead { font-size: 15px; }
   .article-section h2 { font-size: 28px; }
   .chakra-row { grid-template-columns: 20px 120px 1fr; gap: 12px; font-size: 12px; }
-  .floating-whatsapp { width: 56px; height: 56px; right: 16px; bottom: 21px; }
+  .floating-whatsapp { width: 46px; height: 46px; right: 16px; bottom: 21px; }
 }
 
 @media (max-width: 359px) {
