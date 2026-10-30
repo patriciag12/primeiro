@@ -20,7 +20,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 flex flex-col justify-between gap-3 border-t border-footer-foreground/15 pt-6 text-xs sm:flex-row"><span className="flex items-center gap-2"><Globe className="size-4" aria-hidden="true" />Atendimento 100% Online</span><span>Sessões individuais para brasileiros no mundo todo</span></div>
         <p className="mt-6 max-w-4xl text-[10px] leading-relaxed opacity-60">{disclaimer}</p>
-        <div className="mt-7 border-t border-footer-foreground/15 pt-5 text-[10px] opacity-70">© 2026 Millene Ferreira - San Diego - Califórnia</div>
+        <div className="mt-7 border-t border-footer-foreground/15 pt-5 text-[10px] opacity-70">© 2026 Millene Ferreira — San Diego, Califórnia (EUA) <span className="inline-block text-[1.1em] align-baseline leading-none" role="img" aria-label="Bandeira dos Estados Unidos">🇺🇸</span></div>
       </div>
     </footer>
     <Button asChild variant="whatsapp" size="icon" className="floating-whatsapp [&_svg]:size-6"><a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Falar com Millene no WhatsApp" title="Falar com Millene no WhatsApp"><WhatsAppIcon /></a></Button>

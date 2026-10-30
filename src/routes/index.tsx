@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { TestimonialList } from "@/components/testimonial-list";
 import { ContactInvitation } from "@/components/contact-invitation";
-import { contact, investment, journey } from "@/lib/site-content";
+import { contact, investment, journey, chakras } from "@/lib/site-content";
 import { pageHead } from "@/lib/seo";
 import hero from "@/assets/radiestesia-pendulo.webp.asset.json";
 import { MetatronPortrait } from "@/components/metatron-portrait";
@@ -72,7 +72,28 @@ function Index() {
           <p className="mt-5 text-[11px] font-medium uppercase text-primary">Terapeuta Vibracional Integrativa</p>
           <p className="mt-6 text-sm text-muted-foreground">Meu trabalho com a radiestesia terapêutica oferece um espaço de escuta, acolhimento e autoconhecimento. Um olhar sensível para o seu momento, respeitando a sua história e a sua individualidade.</p>
           <p className="mt-4 text-sm text-muted-foreground">Por meio do pêndulo, de tabelas e de gráficos radiestésicos, o cuidado é direcionado à harmonização dos chakras, da aura e dos corpos sutis, dentro da abordagem vibracional.</p>
-          <div className="mt-7 flex items-center gap-3 border-t border-border pt-5 text-xs text-muted-foreground"><Globe className="size-4 text-primary" aria-hidden="true" /> De San Diego para onde você estiver.</div>
+          
+          {/* Espectro das Cores dos 7 Chakras */}
+          <div className="mt-4 flex flex-wrap items-center gap-1.5" aria-label="Cores dos 7 Chakras">
+            {chakras.map(c => (
+              <span
+                key={c.name}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/90 px-2.5 py-1 text-[11px] font-medium text-foreground shadow-2xs backdrop-blur-xs transition-transform hover:scale-105"
+                title={`${c.name} (${c.sanskrit}): ${c.colorName} — ${c.location}`}
+              >
+                <span className="size-2.5 rounded-full shrink-0 shadow-xs" style={{ backgroundColor: c.colorHex }} />
+                <span className="font-medium">{c.name}</span>
+                <span className="text-[10px] text-muted-foreground font-normal">({c.colorName})</span>
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-7 flex items-center gap-2.5 border-t border-border pt-5 text-xs text-muted-foreground">
+            <Globe className="size-4 shrink-0 text-primary" aria-hidden="true" />
+            <span>
+              De San Diego (EUA) <span className="inline-block text-[1.1em] align-baseline leading-none" role="img" aria-label="Bandeira dos Estados Unidos">🇺🇸</span> para onde você estiver.
+            </span>
+          </div>
           <BrandLogo className="brand-logo-about mt-5" />
         </div>
       </div>
@@ -82,7 +103,40 @@ function Index() {
       <div className="site-container">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><span className="eyebrow">Conhecendo a prática</span><h2 className="section-title max-w-xl">Um novo olhar para<br /><em>o seu equilíbrio.</em></h2></div><p className="max-w-sm text-sm text-muted-foreground">A radiestesia é uma prática complementar voltada ao cuidado vibracional e ao bem-estar.</p></div>
         <div className="grid gap-5 md:grid-cols-3">
-          {[{ icon: Compass, title: "Leitura radiestésica", text: "O pêndulo e as tabelas orientam um olhar individual para chakras, aura e corpos sutis, segundo a prática vibracional." }, { icon: Sparkles, title: "Harmonização", text: "Gráficos radiestésicos e frequências são utilizados com a intenção de harmonizar o campo energético, de forma personalizada." }, { icon: Heart, title: "Cuidado & presença", text: "Um processo de escuta e acompanhamento que acolhe o seu momento e abre espaço para o autoconhecimento." }].map(item => <article className="practice-card" key={item.title}><div className="practice-icon"><item.icon className="size-5" strokeWidth={1.4} aria-hidden="true" /></div><h3>{item.title}</h3><p>{item.text}</p></article>)}
+          {[
+            {
+              icon: Compass,
+              title: "Leitura radiestésica",
+              text: "O pêndulo e as tabelas orientam um olhar individual para chakras, aura e corpos sutis, segundo a prática vibracional.",
+              chakraBadges: true,
+            },
+            {
+              icon: Sparkles,
+              title: "Harmonização",
+              text: "Gráficos radiestésicos e frequências são utilizados com a intenção de harmonizar o campo energético, de forma personalizada.",
+            },
+            {
+              icon: Heart,
+              title: "Cuidado & presença",
+              text: "Um processo de escuta e acompanhamento que acolhe o seu momento e abre espaço para o autoconhecimento.",
+            },
+          ].map(item => (
+            <article className="practice-card flex flex-col justify-between" key={item.title}>
+              <div>
+                <div className="practice-icon"><item.icon className="size-5" strokeWidth={1.4} aria-hidden="true" /></div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+              {item.chakraBadges && (
+                <div className="mt-4 flex items-center gap-1 border-t border-border/60 pt-3" title="Os 7 chakras com suas cores correspondentes">
+                  {chakras.map(c => (
+                    <span key={c.name} className="size-2.5 rounded-full" style={{ backgroundColor: c.colorHex }} title={`${c.name}: ${c.colorName}`} />
+                  ))}
+                  <span className="ml-1.5 text-[10px] text-muted-foreground font-medium">7 chakras</span>
+                </div>
+              )}
+            </article>
+          ))}
         </div>
         <Button asChild variant="link" className="mt-7 px-0 text-xs"><Link to="/o-que-e-radiestesia">Entenda o que é radiestesia <ArrowRight /></Link></Button>
       </div>

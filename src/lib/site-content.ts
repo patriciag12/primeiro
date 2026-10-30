@@ -16,13 +16,13 @@ export const testimonials = [
 ];
 
 export const chakras = [
-  { name: "Coronário", sanskrit: "Sahasrara", location: "Topo da cabeça", meaning: "Conexão espiritual, propósito e sentido de vida", color: "chakra-crown" },
-  { name: "Frontal", sanskrit: "Ajna", location: "Entre as sobrancelhas", meaning: "Intuição, percepção e clareza mental", color: "chakra-third" },
-  { name: "Laríngeo", sanskrit: "Vishuddha", location: "Garganta", meaning: "Comunicação, expressão e verdade pessoal", color: "chakra-throat" },
-  { name: "Cardíaco", sanskrit: "Anahata", location: "Centro do peito", meaning: "Amor, perdão, relações e compaixão", color: "chakra-heart" },
-  { name: "Plexo solar", sanskrit: "Manipura", location: "Acima do umbigo", meaning: "Autoestima, força de vontade e poder pessoal", color: "chakra-solar" },
-  { name: "Sacral", sanskrit: "Svadhishthana", location: "Baixo ventre", meaning: "Criatividade, prazer e fluxo das emoções", color: "chakra-sacral" },
-  { name: "Básico", sanskrit: "Muladhara", location: "Base da coluna", meaning: "Segurança, enraizamento e energia vital", color: "chakra-root" },
+  { name: "Coronário", sanskrit: "Sahasrara", location: "Topo da cabeça", meaning: "Conexão espiritual, propósito e sentido de vida", color: "chakra-crown", colorName: "Violeta", colorHex: "#8E24AA" },
+  { name: "Frontal", sanskrit: "Ajna", location: "Entre as sobrancelhas", meaning: "Intuição, percepção e clareza mental", color: "chakra-third", colorName: "Índigo", colorHex: "#3949AB" },
+  { name: "Laríngeo", sanskrit: "Vishuddha", location: "Garganta", meaning: "Comunicação, expressão e verdade pessoal", color: "chakra-throat", colorName: "Azul Celeste", colorHex: "#0288D1" },
+  { name: "Cardíaco", sanskrit: "Anahata", location: "Centro do peito", meaning: "Amor, perdão, relações e compaixão", color: "chakra-heart", colorName: "Verde Esmeralda", colorHex: "#2E7D32" },
+  { name: "Plexo solar", sanskrit: "Manipura", location: "Acima do umbigo", meaning: "Autoestima, força de vontade e poder pessoal", color: "chakra-solar", colorName: "Amarelo Dourado", colorHex: "#FBC02D" },
+  { name: "Sacral", sanskrit: "Svadhishthana", location: "Baixo ventre", meaning: "Criatividade, prazer e fluxo das emoções", color: "chakra-sacral", colorName: "Laranja", colorHex: "#F57C00" },
+  { name: "Básico", sanskrit: "Muladhara", location: "Base da coluna", meaning: "Segurança, enraizamento e energia vital", color: "chakra-root", colorName: "Vermelho", colorHex: "#D32F2F" },
 ];
 
 export const journey = [
