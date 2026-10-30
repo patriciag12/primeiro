@@ -65,17 +65,15 @@ export function RadiesthesiaWatermarks() {
   return (
     <div className="radiesthesia-layer" aria-hidden="true">
       {graphs.map((g, i) => (
-        <svg
+        <div
           key={g.name}
           className={`watermark graph-${i + 1}`}
           data-graph={g.name}
-          viewBox="0 0 300 300"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.1"
         >
-          {g.drawing}
-        </svg>
+          <svg className="watermark-drawing" viewBox="0 0 300 300" fill="none" stroke="currentColor" strokeWidth="1.1">
+            {g.drawing}
+          </svg>
+        </div>
       ))}
     </div>
   );

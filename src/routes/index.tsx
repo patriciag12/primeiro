@@ -12,6 +12,7 @@ import hero from "@/assets/radiestesia-pendulo.webp.asset.json";
 import { MetatronPortrait } from "@/components/metatron-portrait";
 import { BrandLogo } from "@/components/brand-logo";
 import { useLang } from "@/lib/lang-context";
+import { USFlag } from "@/components/us-flag";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -92,7 +93,7 @@ function Index() {
           <div className="mt-7 flex items-center gap-2.5 border-t border-border pt-5 text-xs text-muted-foreground">
             <Globe className="size-4 shrink-0 text-primary" aria-hidden="true" />
             <span>
-              {t("about.location")} <span className="inline-block text-[1.1em] align-baseline leading-none" role="img" aria-label="Bandeira dos Estados Unidos">🇺🇸</span> {t("about.locationSuffix")}
+              {t("about.location")} <USFlag /> {t("about.locationSuffix")}
             </span>
           </div>
           <BrandLogo className="brand-logo-about mt-5" />
