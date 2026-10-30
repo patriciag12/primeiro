@@ -3,7 +3,7 @@ import { contact, investment } from "@/lib/site-content";
 import { protectResponse } from "@/lib/security-headers";
 
 describe("Supplied contacts and investment", () => {
-  it("uses the exact WhatsApp destination supplied by Patricia", () => { expect(contact.whatsapp).toBe("https://bit.ly/MilleneFerreiraTerapeuta"); });
+  it("uses the exact WhatsApp destination supplied by Patricia", () => { expect(contact.whatsapp).toBe("https://wa.me/16194555073?text=Oie%21%20Gostaria%20de%20agendar%20uma%20consulta%20para%20conversarmos%20sobre%20harmonizar%20as%20seguintes%20quest%C3%B5es..."); });
   it("uses Millene's email", () => { expect(contact.email).toBe("milleneferreiraterapeuta@gmail.com"); });
   it("uses the supplied Instagram account", () => { expect(new URL(contact.instagram).pathname).toBe("/millenefds/"); });
   it("keeps the entrance session at US$150 from the supplied PDF", () => { expect(investment.entrance).toBe(150); });

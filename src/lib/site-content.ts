@@ -1,5 +1,5 @@
 export const contact = {
-  whatsapp: "https://bit.ly/MilleneFerreiraTerapeuta",
+  whatsapp: "https://wa.me/16194555073?text=Oie%21%20Gostaria%20de%20agendar%20uma%20consulta%20para%20conversarmos%20sobre%20harmonizar%20as%20seguintes%20quest%C3%B5es...",
   instagram: "https://www.instagram.com/millenefds/",
   email: "milleneferreiraterapeuta@gmail.com",
 };

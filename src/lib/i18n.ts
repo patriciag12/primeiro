@@ -113,7 +113,7 @@ export const translations = {
   "contact.title":       { pt: "Um passo pode mudar",      en: "One step can change" },
   "contact.titleEm":     { pt: "o seu olhar.",             en: "your perspective." },
   "contact.lead":        { pt: "Entre em contato e converse com a Millene sobre o que está sentindo. O primeiro passo é simples.", en: "Get in touch and talk to Millene about what you are feeling. The first step is simple." },
-  "contact.cta":         { pt: "Agendar pelo WhatsApp",    en: "Book via WhatsApp" },
+  "contact.cta":         { pt: "Vamos conversar?",          en: "Shall we talk?" },
   "contact.instagram":   { pt: "Seguir no Instagram",      en: "Follow on Instagram" },
 
   /* ── Footer ──────────────────────────────────────────────────── */

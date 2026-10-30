@@ -17,3 +17,5 @@
 - Keep unverified source testimonials explicitly disclosed and their leaf page noindexed until authenticity and consent are confirmed; never add review ratings or endorsement schema for these excerpts.
 - Apply response safety headers through a pure helper in the SSR entry, with iframe allowances for Lovable preview and no blanket inline-script ban; hydration must stay functional.
 - Preserve pinned TanStack package versions and update vulnerable transitive libraries using compatible overrides; recheck the dependency scan after lockfile changes.
+- Centralize contact-brand marks and the country flag as lightweight inline vector components; they remain crisp, font-sized and independent of platform emoji rendering.
+- Animate watermark translation on wrappers and self-rotation on their SVG drawings; independent transforms keep both motions smooth and reduced-motion settings disable both.
